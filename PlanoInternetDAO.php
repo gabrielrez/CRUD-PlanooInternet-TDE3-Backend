@@ -32,9 +32,9 @@ class PlanoInternetDAO
     $stmt->bindValue(1, $plano->getId());
   }
 
-  public function delete($plano)
+  public function delete(PlanoInternet $plano)
   {
-    $stmt = Conexao::getConn()->prepare('DELETE FROM pizza WHERE id = ?');
+    $stmt = Conexao::getConn()->prepare('DELETE FROM planos_internet WHERE id = ?');
     $stmt->bindValue(1, $plano->getId());
     $stmt->execute();
   }

@@ -5,7 +5,7 @@ class PlanoInternet
   public $nome;
   public $velocidade;
   public $preco;
-  public $id;
+  public int $id;
 
   public function __construct($nome, $preco, $velocidade)
   {
@@ -32,6 +32,11 @@ class PlanoInternet
   public function getId()
   {
     return $this->id;
+  }
+
+  public function setId($id)
+  {
+    $this->id = $id;
   }
 
   public function detalhes()

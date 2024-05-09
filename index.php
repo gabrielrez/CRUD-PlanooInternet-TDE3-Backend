@@ -3,8 +3,9 @@ require_once 'PlanoInternet.php';
 require_once 'PlanoInternetDAO.php';
 
 $planoDAO = new PlanoInternetDAO();
-// $plano1 = new PlanoInternet("Plano Básico", 50, 100);
-// $planoDAO->create($plano1);
+$plano3 = new PlanoInternet("Plano Avançado", 100, 300);
+$plano3->setId(18);
+$planos = $planoDAO->create($plano3);
 $planos = $planoDAO->read();
 ?>
 

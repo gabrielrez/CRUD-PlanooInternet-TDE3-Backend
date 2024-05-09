@@ -21,4 +21,21 @@ class PlanoInternetDAO
     $stmt = $conn->query('SELECT * FROM planos_internet');
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
+
+  public function update(PlanoInternet $plano)
+  {
+    $conn = Conexao::getConn();
+    $stmt = $conn->prepare('UPDATE planos_internet SET nome = ?, preco = ?, velocidade = ? WHERE id = ?');
+    $stmt->bindValue(1, $plano->getNome());
+    $stmt->bindValue(1, $plano->getPreco());
+    $stmt->bindValue(1, $plano->getVelocidade());
+    $stmt->bindValue(1, $plano->getId());
+  }
+
+  public function delete($plano)
+  {
+    $stmt = Conexao::getConn()->prepare('DELETE FROM pizza WHERE id = ?');
+    $stmt->bindValue(1, $plano->getId());
+    $stmt->execute();
+  }
 }

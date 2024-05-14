@@ -3,9 +3,6 @@ require_once 'PlanoInternet.php';
 require_once 'PlanoInternetDAO.php';
 
 $planoDAO = new PlanoInternetDAO();
-$plano3 = new PlanoInternet("Plano Avançado", 100, 300);
-$plano3->setId(18);
-$planos = $planoDAO->create($plano3);
 $planos = $planoDAO->read();
 ?>
 
@@ -16,8 +13,21 @@ $planos = $planoDAO->read();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Planos de internet</title>
-  <link rel="stylesheet" href="style.css">
 </head>
+
+<style>
+  body {
+    max-width: 400px;
+    margin: auto;
+  }
+
+  .box {
+    border: 1px solid #ccc;
+    padding: 8px;
+    margin-top: 8px;
+    border-radius: 8px;
+  }
+</style>
 
 <body>
   <div class="container">

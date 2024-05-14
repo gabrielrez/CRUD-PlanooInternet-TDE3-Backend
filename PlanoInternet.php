@@ -5,7 +5,7 @@ class PlanoInternet
   public $nome;
   public $velocidade;
   public $preco;
-  public int $id;
+  public $id;
 
   public function __construct($nome, $preco, $velocidade)
   {

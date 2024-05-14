@@ -26,11 +26,13 @@ class PlanoInternetDAO
   {
     $conn = Conexao::getConn();
     $stmt = $conn->prepare('UPDATE planos_internet SET nome = ?, preco = ?, velocidade = ? WHERE id = ?');
-    $stmt->bindValue(1, $plano->getNome());
-    $stmt->bindValue(1, $plano->getPreco());
-    $stmt->bindValue(1, $plano->getVelocidade());
-    $stmt->bindValue(1, $plano->getId());
+    $stmt->bindValue(1, $plano->nome);
+    $stmt->bindValue(2, $plano->preco);
+    $stmt->bindValue(3, $plano->velocidade);
+    $stmt->bindValue(4, $plano->getId());
+    $stmt->execute();
   }
+
 
   public function delete(PlanoInternet $plano)
   {
